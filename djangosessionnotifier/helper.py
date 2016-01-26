@@ -14,18 +14,12 @@ class MiddlewareHelper:
         self.response = response
 
     def is_visible(self):
-        if self.request.method != 'GET':
+        if self.request.method != 'GET' or self.request.is_ajax():
             return False
 
-        if self.request.META.get('REMOTE_ADDR', None) not in settings.INTERNAL_IPS:
-            return False
+        admin_index_url = urlresolvers.reverse("admin:index")
 
-        if self.request.is_ajax():
-            return False
-
-        admin_base_url = urlresolvers.reverse("admin:index")
-
-        if not self.request.get_full_path().startswith(admin_base_url) and self.request.user.is_authenticated() and settings.DEBUG:
+        if not self.request.get_full_path().startswith(admin_index_url) and self.request.user.is_authenticated() and settings.DEBUG:
             return True
 
     def is_valid_type(self):
