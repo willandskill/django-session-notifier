@@ -1,0 +1,44 @@
+<div class="sessionauthdisplayer-block">
+    <style>
+        .sessionauthdisplayer-block {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 20px;
+            color: #fff;
+            background: red;
+            opacity: .7;
+            z-index: 999999999;
+        }
+
+        .sessionauthdisplayer-block .displayer-link {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .sessionauthdisplayer-block .displayer-btn {
+            background: #fff;
+            color: red;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+
+            border: 2px solid #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 10px;
+            transition: .2s;
+        }
+
+        .sessionauthdisplayer-block .displayer-link:hover, .sessionauthdisplayer-block .displayer-btn:hover {
+            opacity:.9;
+        }
+
+    </style>
+
+    Your're authenticated to <a class="displayer-link" href="{{ admin_url }}" target="_self">django-admin.</a>
+    <a class="displayer-btn" href="{{ logout_url }}" target="_self">Sign out</a>
+</div>
