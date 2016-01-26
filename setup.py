@@ -11,7 +11,7 @@ setup(
     url='https://github.com/willandskill/django-session-notifier',
     license='MIT licence, see LICENCE.txt',
     description='Displays notification box in all views if user is session authenticated',
-    long_description=open('README.txt').read(),
+    long_description=open('README.md').read(),
     zip_safe=False,
     include_package_data=True
 )
