@@ -1,0 +1,2 @@
+include README LICENCE
+recursive-include djangosessionnotifier *.py *.html *.js
