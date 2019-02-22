@@ -6,4 +6,12 @@ django-session-notifier is a simple package that displays a notification box in 
 ## Installation
 * pip install django-session-notifier
 * Add "djangosessionnotifier" to INSTALLED_APPS
-* Add 'djangosessionnotifier.middleware.NotifierMiddleware' to MIDDLEWARE_CLASSES
+* Add 'djangosessionnotifier.middleware.NotifierMiddleware' to MIDDLEWARE
+
+
+## To update package
+
+```
+python setup.py sdist
+twine upload dist/*
+```

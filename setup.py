@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='django-session-notifier',
-    version='0.0.5',
+    version='0.0.6',
     author=u'Will & Skill',
     author_email='info@willandskill.se',
     packages=find_packages(),
