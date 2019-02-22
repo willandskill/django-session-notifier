@@ -1,6 +1,6 @@
 from django.template.loader import render_to_string
 from django.conf import settings
-from django.core import urlresolvers
+from django.urls import reverse
 
 
 class MiddlewareHelper:
@@ -17,7 +17,7 @@ class MiddlewareHelper:
         if self.request.method != 'GET' or self.request.is_ajax():
             return False
 
-        admin_index_url = urlresolvers.reverse("admin:index")
+        admin_index_url = reverse("admin:index")
 
         if not self.request.get_full_path().startswith(admin_index_url) and self.request.user.is_authenticated() and settings.DEBUG:
             return True
@@ -32,8 +32,8 @@ class MiddlewareHelper:
         return True
 
     def get_response_context(self):
-        logout_url = urlresolvers.reverse("admin:logout")
-        admin_url = urlresolvers.reverse("admin:index")
+        logout_url = reverse("admin:logout")
+        admin_url = reverse("admin:index")
         return {'logout_url': logout_url, 'admin_url': admin_url}
 
     def get_modified_response(self):
