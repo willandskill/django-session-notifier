@@ -1,5 +1,5 @@
 from django.conf import settings
 
-settings.MIDDLEWARE_CLASSES += (
+settings.MIDDLEWARE += (
     'djangosessionnotifier.middleware.NotifierMiddleware',
 )
