@@ -1,4 +1,4 @@
-from helper import MiddlewareHelper
+from .helper import MiddlewareHelper
 
 
 class NotifierMiddleware(object):
